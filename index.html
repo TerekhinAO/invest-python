@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://tinkoff.github.io/invest-python/">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
     
     
       
@@ -21,7 +21,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.cd566b2a.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.2b4465f4.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
@@ -45,6 +45,8 @@
       <link rel="stylesheet" href="assets/_mkdocstrings.css">
     
       <link rel="stylesheet" href="custom.css">
+    
+      <link rel="stylesheet" href="termynal.css">
     
     <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -255,6 +257,13 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    Возможности
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     Примеры
   </a>
   
@@ -347,6 +356,13 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    Возможности
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     Примеры
   </a>
   
@@ -386,11 +402,44 @@
 <h1 id="tinkoff-invest">Tinkoff Invest</h1>
 <p><a href="https://pypi.org/project/tinkoff-investments/"><img alt="PyPI" src="https://img.shields.io/pypi/v/tinkoff-investments" /></a>
 <a href="https://www.python.org/downloads/"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/tinkoff-investments" /></a></p>
+<p>Данный репозиторий предоставляет клиент для взаимодействия с торговой платформой <a href="https://www.tinkoff.ru/invest/">Тинькофф Инвестиции</a> на языке Python.</p>
+<ul>
+<li><a href="https://tinkoff.github.io/invest-python/">Документация</a></li>
+<li><a href="https://github.com/Tinkoff/investAPI">Основной репозиторий с документацией</a></li>
+<li><a href="https://tinkoff.github.io/investAPI/">Документация для разработчиков</a></li>
+</ul>
 <h2 id="_1">Начало работы</h2>
-<div class="highlight"><pre><span></span><code>pip install tinkoff-investments
-</code></pre></div>
-<h2 id="_2">Примеры</h2>
+<!-- termynal -->
+
+<p>
+<div class="termy" data-termynal>
+<span data-ty="input">pip install tinkoff-investments</span>
+<span data-ty></span>
+</div></p>
+<h2 id="_2">Возможности</h2>
+<ul>
+<li>&#9745; Синхронный и асинхронный GRPC клиент</li>
+<li>&#9745; Возможность отменить все заявки</li>
+<li>&#9745; Выгрузка истории котировок "от" и "до"</li>
+<li>&#9744; Кеширование данных</li>
+<li>&#9744; Торговая стратегия</li>
+</ul>
+<h2 id="_3">Примеры</h2>
 <p>Примеры доступны <a href="https://github.com/Tinkoff/invest-python/tree/main/examples">здесь</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tinkoff.invest</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">tinkoff.invest.token</span> <span class="kn">import</span> <span class="n">TOKEN</span>
+
+<span class="k">with</span> <span class="n">Client</span><span class="p">(</span><span class="n">TOKEN</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">get_accounts</span><span class="p">())</span>
+</code></pre></div>
+<p>Для запуска примеров, нужно добавить токен в переменную окружения.</p>
+<!-- termynal -->
+
+<p>
+<div class="termy" data-termynal>
+<span data-ty="input">export INVEST_TOKEN=YOUR_TOKEN</span>
+<span data-ty></span>
+</div></p>
 <h2 id="contribution">Contribution</h2>
 <ul>
 <li><a href="https://github.com/Tinkoff/invest-python/blob/main/CONTRIBUTING.md">CONTRIBUTING</a></li>
@@ -454,7 +503,9 @@
     <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "search": "assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.01de222e.min.js"></script>
+      <script src="assets/javascripts/bundle.960e086b.min.js"></script>
+      
+        <script src="termynal.js"></script>
       
     
   </body>
